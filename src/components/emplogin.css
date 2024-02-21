@@ -1,0 +1,44 @@
+.employeebg{
+    background-color:black;
+    height: 100vh;
+}
+.outer{
+    padding-top: 5%;
+}
+.employeeborder {
+   
+    padding: 5%;
+    width: 30%;
+    padding-top: 3%;
+    margin-left: 35%;
+    background-color: black;
+   
+}
+.la {
+    padding-right: 170px;
+    margin-bottom: 10px;
+    color: white;
+}
+.btn {
+    width: 40%;
+    margin-top: 10px;
+
+}
+#regi{
+    color: white;
+    margin-bottom: 10%;
+    margin-right: 60%;
+
+
+}
+.form-control {
+    height: 10%;
+}
+.head{
+    margin-right: 5%;
+    padding-top: 5%;
+    color: white;
+}
+#bt{
+    margin-left: 20%;
+}
