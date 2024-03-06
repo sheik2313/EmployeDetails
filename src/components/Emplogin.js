@@ -6,7 +6,7 @@ import axios from 'axios';
 function Emplogin() {
     const [empdata, setEmpdata] = useState({
         empname: '',
-        empuserid: '',
+        empmail: '',
         empsalary: ''
 
     })
@@ -18,16 +18,23 @@ function Emplogin() {
     }
     const submit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4009/addemploye', empdata)
+        if (empdata.empname && empdata.empmail && empdata.empsalary) {
+            axios.post('http://localhost:4000/addemploye', empdata)
+                .then((responce) => {
+                    alert(responce.data.msg);
+                    setEmpdata({
+                        empname:'',
+                        empmail:'',
+                        empsalary:''
+                    })
 
-
-
-        console.log(empdata);
-        setEmpdata({
-            empname: '',
-            empuserid: '',
-            empsalary: ''
-        })
+                })
+                .catch((err) => {
+                    console.log(err);;
+                })
+        } else {
+            alert("please enter all values")
+        }
     }
     return (
         <div className='employeebg'>
@@ -37,13 +44,13 @@ function Emplogin() {
                 <div className='employeeborder'>
                     <h3 id='regi'>Register</h3>
                     <label className='la'>Employee Name</label>
-                    <input className='form-control mb-4' name='empname' value={empdata.empname} onChange={change} type='text'></input>
-                    <label className='la '>Employee UserId</label>
-                    <input className='form-control mb-4' name='empuserid' value={empdata.empuserid} onChange={change} type='number'></input>
+                    <input className='form-control mb-4' name='empname' value={empdata.empname} onChange={change} type='text' required></input>
+                    <label className='la '>Employee mail</label>
+                    <input className='form-control mb-4' name='empmail' value={empdata.empmail} onChange={change} type='email' required></input>
                     <label className='la'>Employee Salary</label>
-                    <input className='form-control mb-4' name='empsalary' value={empdata.empsalary} onChange={change} type='number'></input>
+                    <input className='form-control mb-4' name='empsalary' value={empdata.empsalary} onChange={change} type='number' required></input>
                     <Button className='btn' onClick={submit} variant="danger">Register</Button>
-                    <Link to={"/"}><Button className='btn ' id='bt' variant="danger">Back</Button></Link>
+                    <Link to={"/empdetail"}><Button className='btn ' id='bt' variant="danger">Empdetail</Button></Link>
                 </div>
             </div>
 

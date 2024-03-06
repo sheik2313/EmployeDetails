@@ -1,0 +1,25 @@
+#empbg {
+    background-color: black;
+    height: 100vh;
+}
+.emptable{
+    
+    width: 80%;
+    margin-left: 15%;
+    margin-top: 10%;
+    color: white;
+}
+th,td{
+    padding-right: 120px;
+    padding-bottom: 50px;
+}
+#registerbt{
+    width: 7%;
+}
+#homebt{
+   width: 7%;
+   margin-left: 78%;
+}
+#regbt{
+    width: 7%;
+}
